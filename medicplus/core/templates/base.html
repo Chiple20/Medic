@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel=icon href= "{% static 'img/logo.png' %}">
+        <!-- Compiled and minified JavaScript -->
+        <link rel="stylesheet" href="{% static 'estilos.css' %}"/>
+        
+        <title>{% block title %} {% endblock%}</title>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-wrapper #1e88e5 blue darken-1">
+            <a href="#!" class="brand-logo right"><img src="{% static 'img/logo.png' %}" alt="Error" width="60"></a>
+      
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            
+            <ul class="center hide-on-med-and-down ">
+              <li><a class="dropdown-trigger" href="#!" data-target="dropdown2"><i class="material-icons center">account_circle</i></a></li>   
+            </ul>
+
+            <div class="caja1 ">
+            <ul class="center hide-on-med-and-down ">
+                <li><a href="index">Inicio</a></li>
+                <li><a href="QuienesSomos">Quienes somos </a></li>
+                <li><a href="#">Nuestro servicios</a></li>
+            </ul>
+        </div>
+        </div>
+      </nav>
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a href="#">Ficha Medica</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Solicitud de consulta</a></li>
+        <li><a href="#">Talleres</a></li>
+        <li><a href="#">Cerrar sesion</a></li>
+      </ul>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="QuienesSomos">Quienes somos </a></li>
+        <li><a href="#">Nuestro servicios</a></li>
+        <li><a href="#">Ficha Medica</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Solicitud de consulta</a></li>
+        <li><a href="#">Talleres</a></li>
+        <li><a href="#">Cerrar sesion</a></li>
+      </ul>
+
+
+    
+      
+
+
+      {% block content %}
+
+
+
+      {% endblock%}
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+
+
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.sidenav');
+                var instances = M.Sidenav.init(elems,);
+            });
+      </script>
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elems, );
+        });
+      </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            var instances = M.Dropdown.init(elems, {
+              coverTrigger:false});
+            });
+        </script>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var elems = document.querySelectorAll('.slider');
+              var instances = M.Slider.init(elems, );
+            });
+          </script>
+        
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              var elems = document.querySelectorAll('.sidenav');
+              var instances = M.Slider.init(elems, );
+            });
+          </script>
+</body>
+</html>
