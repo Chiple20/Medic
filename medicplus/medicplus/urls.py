@@ -19,4 +19,5 @@ from . import settings
 urlpatterns = [
     path('core/', include('core.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

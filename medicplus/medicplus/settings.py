@@ -26,7 +26,8 @@ SECRET_KEY = 'q1))ff$y=^=f*!t@%c46z4x%x=zvvh@c*5j@$-sldx0#(7lbir'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = '/core/index'
+LOGOUT_REDIRECT_URL = '/core/index'
 
 # Application definition
 

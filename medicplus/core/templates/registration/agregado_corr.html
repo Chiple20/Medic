@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+
+  {% csrf_token %}
+  <div class="row">
+      <div class="col s4"></div>
+          <div class="col s12">
+              <div class=" section container">
+                  <div class="row card-panel #e0e0e0 grey lighten-2">
+                      <div class="center">
+                          <h1>¡Correcto!</h1>
+                          <h5>Usuario registrado Éxitosamente</h5>
+                          <br><br>
+                          <button type="submit" class="btn red waves-effect"><a href="{% url 'login'%}" style="color:white;">Volver al Inicio de Sesión</a></button>
+                      </div>                
+                  </div>
+              </div>
+          </div>
+      <br><br><br><br><br><br><br><br><br>
+      </div>
+  </div>
+
+
+
+{% endblock %}

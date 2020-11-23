@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load static %}
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+    
+<div class="row">
+    <div class="col s4"></div>
+        <div class="col s12">
+            <div class=" section container">
+                <div class="row card-panel #e0e0e0 grey lighten-2">
+                    <div class="center">
+                        <h1>¡Error!</h1>
+                        <h5>Ingreso uno o varios campos vacios, reviselo por favor.</h5>
+                        <br><br>
+                        <button type="submit" class="btn red waves-effect"><a href="{% url 'registro'%}" style="color:white;">Volver </a></button>
+                    </div>                
+                </div>
+            </div>
+        </div>
+  
+    </div>
+
+{% endblock %}

@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 class Adminsitrador(models.Model):
     id_administrador = models.CharField(primary_key=True,max_length=10)
     primer_nombre = models.CharField(max_length=20,null=True)

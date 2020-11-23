@@ -39,7 +39,15 @@
         <li><a href="#">Perfil</a></li>
         <li><a href="#">Solicitud de consulta</a></li>
         <li><a href="#">Talleres</a></li>
-        <li><a href="#">Cerrar sesion</a></li>
+        {% if user.is_authenticated%}
+        <li><a href="{% url 'logout'%}" >Cerrar Sesión</a></li>
+      {% else  %}
+      <li><a href="{% url 'login'%}" >Iniciar Sesión</a></li>
+      {% endif %}
+      <li class="divider"></li>
+      {% if user.is_authenticated %}
+        <li><a href="#">{{user.username}}</a></li>
+      {% endif%}
       </ul>
 
       
@@ -51,7 +59,16 @@
         <li><a href="#">Perfil</a></li>
         <li><a href="#">Solicitud de consulta</a></li>
         <li><a href="#">Talleres</a></li>
-        <li><a href="#">Cerrar sesion</a></li>
+        {% if user.is_authenticated%}
+        <li><a href="{% url 'logout'%}" >Cerrar Sesión</a></li>
+        {% else  %}
+        <li><a href="{% url 'login'%}" >Iniciar Sesión</a></li>
+        {% endif %}
+        <li class="divider"></li>
+        {% if user.is_authenticated %}
+        <li><a href="#">{{user.username}}</a></li>
+        {% endif%}
+       
       </ul>
 
 

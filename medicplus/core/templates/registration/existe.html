@@ -1,0 +1,27 @@
+{% extends "registration/base_login.html" %}
+
+{%block title %} All for Shonen{% endblock%}
+
+{% block content%}
+
+  {% csrf_token %}
+  <div class="row">
+      <div class="col s4"></div>
+          <div class="col s12">
+              <div class=" section container">
+                  <div class="row card-panel #e0e0e0 grey lighten-2">
+                      <div class="center">
+                          <h1>¡Error!</h1>
+                          <h5>Nombre de usuario ya existe</h5>
+                          <br><br>
+                          <button type="submit" class="btn red waves-effect"><a href="{% url 'registro'%}" style="color:white;">Volver </a></button>
+                      </div>                
+                  </div>
+              </div>
+          </div>
+    
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+
+
+{% endblock %}
