@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from .models import User
 from django.db import IntegrityError
+from core.models import FormularioConsulta
 def index(request):
     return render(request,'index.html',{})
+def solicitado(request):
+    return render(request,'solicitado.html',{})
+    
 def QuienesSomos(request):
     return render(request,'Quienessomos.html',{})
 def login(redirect):
@@ -12,6 +16,43 @@ def login(redirect):
 def registro(request):
     print("Hola estamos en la ventana index")
     return render(request, 'registration/registro.html', {})
+
+#agregar solicitud 
+def Formulario(request):
+    return render(request,'Formulario.html',{})
+def agregar_solicitud (request):
+    print("hola  estoy en agregar producto...")
+    if request.method == 'POST':
+      
+        mi_motivo_consulta = request.POST['motivo_consulta']
+        mi_fc_id_ficha = request.POST['fc_id_ficha']
+        mi_sintoma = request.POST['sintoma']
+        mi_prioridad = request.POST['priorida']
+       
+        if mi_id_formulario != "":
+            try:
+                Consulta = FormularioConsulta()
+
+                Consulta.id_formulario = mi_id_formulario
+                Consulta.motivo_consulta = mi_motivo_consulta
+                Consulta.fc_id_ficha = mi_fc_id_ficha
+                Consulta.sintoma = mi_sintoma
+                Consulta.prioridad = mi_prioridad
+               
+
+                Consulta.save()
+
+                return render(request, '', {})
+
+            except Consulta.DoesNotExist:
+                return render(request, 'core/error/error_204.html', {})
+        else:
+            return render(request, 'core/error/error_201.html', {})
+    else:
+        return render(request, 'core/error/error_203.html', {})
+
+
+
 def agregar_usuario(request):
     print("hola  estoy en agregar_figura...")
     if request.method == 'POST':
