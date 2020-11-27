@@ -3,35 +3,35 @@
 {% load static %}
 {% block content%}
 <form action="agregar_solicitud" method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-       <div class="section container">
-              <div class="row card-panel">
-                     <div class="row">
-                            <div class="col s12">
-                                   <label>id formulario  :</label><input type="text" name="id_formulario"><br>
-                            </div>
-                            <div class="col s12">
-                                   <label>motivo consulta:</label><input type="text" name="motivo_consulta"><br>
-                            </div>
-                            <div class="col s12">
-                                   <label>mi fc id ficha:</label><input type="text" name="fc_id_ficha"><br>
-                            </div>
-                            <div class="col s12">
-                                   <label>mi sintoma:</label><input type="text" name="sintoma"><br>
-                            </div>
-                            <div class="col s12">
-                                   <label>mi prioridad:</label><input type="text" name="prioridad"><br>
-                            </div>
-                             <input type="text" style="display:none;" name="hora_solicitud" value="21:16">
-                     </div>
-              </div>
-              <div class="center">
-                     <input class="btn red btn-primary" type="submit"  value="Ingresar" >
-              </div>
-       </div>
-      
-</form>
-  
+       {% csrf_token %}
+          <div class="section container">
+                 <div class="row card-panel">
+                        <div class="row">
+                               <div class="col s12">
+                                      <label>id formulario  :</label><input type="text" name="id_formulario"><br>
+                               </div>
+                               <div class="col s12">
+                                      <label>motivo consulta:</label><input type="text" name="motivo_consulta"><br>
+                               </div>
+                               <div class="col s12">
+                                      <label>mi fc id ficha:</label><input type="text" name="fc_id_ficha"><br>
+                               </div>
+                               <div class="col s12">
+                                      <label>mi sintoma:</label><input type="text" name="sintoma"><br>
+                               </div>
+                               <div class="col s12">
+                                      <label>mi prioridad:</label><input type="text" name="prioridad"><br>
+                               </div>
+                                <input type="text" style="display:none;" name="hora_solicitud" value="21:16">
+                        </div>
+                 </div>
+                 <div class="center">
+                        <input class="btn red btn-primary" type="submit"  value="Ingresar" >
+                 </div>
+          </div>
+         
+   </form>
+       
   
 
   {% endblock %}

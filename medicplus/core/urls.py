@@ -10,4 +10,5 @@ urlpatterns = [
     path('Formulario', views.Formulario, name='Formulario'),
     path('agregar_solicitud', views.agregar_solicitud, name='agregar_solicitud'),
     path('solicitado', views.solicitado, name='solicitado'),
+    path('listado', views.listado, name='listado'),
 ]

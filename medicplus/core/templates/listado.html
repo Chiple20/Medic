@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+{% block title %} Medicplus {% endblock %}
+{% load static %}
+{% block content%}
+
+       <h1 class="center">lista de pacientes en espera</h1> 
+       <br><br>
+       las cantidad de pacientes es {{ listado | length }}
+       <br>
+       <div class="xbox">       
+              <div class="row">
+                     <div class="col s1">ID FORMULARIO</div>
+                     <div class="col s3">MOTIVO CONSULTA</div>
+                     <div class="col s1">ID FICHA</div>
+                     <div class="col s3">SINTOMAS</div>
+                     <div class="col s2">PRIORIDAD</div>
+                     <div class="col s1">HORA SOLICITUD</div>
+              </div>
+
+              {% for consulta in listado %}
+
+
+                     <div class="row">
+                            <div class="col s1">{{consulta.id_formulario}}</div>
+                            <div class="col s3">{{consulta.motivo_consulta}}</div>
+                            <div class="col s1">{{consulta.fc_id_ficha}}</div>
+                            <div class="col s3">{{consulta.sintoma}}</div>
+                            <div class="col s2">{{consulta.prioridad}}</div>
+                            <div class="col s1">{{consulta.hora_solicitud}}</div>
+                            <div class="col s1"><input type="button" value="Atender"></div>
+                     </div>
+
+
+       
+              {% endfor %}
+
+
+
+
+       </div>
+
+
+  
+
+  {% endblock %}
+
+  {% block javascript%}
+  
+
+  {% endblock %}
+
+
+

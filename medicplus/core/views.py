@@ -77,3 +77,10 @@ def agregar_usuario(request):
            return render(request, 'registration/vacio.html', {})
     else:
         return render(request, 'registration/noexiste.html', {})
+
+def listado(request):
+    print("estamos al aire tulio lista de espera")
+    #lista = Alumno.objects.all()
+    lista = FormularioConsulta.objects.all()
+    context={'listado':lista}
+    return render(request,'listado.html',context)
