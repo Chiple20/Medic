@@ -157,7 +157,7 @@ class Ficha(models.Model):
         db_table = 'ficha'
 
 class FormularioConsulta(models.Model):
-    id_formulario = models.CharField(primary_key=True,max_length=10,db_column='id_formulario')  # This field type is a guess.
+    id_formulario = models.CharField(primary_key=True,max_length=10,db_column='id_formulario',unique=True)  # This field type is a guess.
     motivo_consulta = models.CharField(max_length=100,null=True)
     fc_id_ficha = models.CharField(null=True,max_length=10)  # This field type is a guess.
     sintoma = models.CharField(max_length=100,null=True)

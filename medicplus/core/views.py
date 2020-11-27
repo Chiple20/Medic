@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import User
 from django.db import IntegrityError
-from core.models import FormularioConsulta
+from .models import FormularioConsulta
 def index(request):
     return render(request,'index.html',{})
 def solicitado(request):
@@ -20,30 +20,29 @@ def registro(request):
 #agregar solicitud 
 def Formulario(request):
     return render(request,'Formulario.html',{})
+
 def agregar_solicitud (request):
     print("hola  estoy en agregar producto...")
     if request.method == 'POST':
-      
+        mi_id_formulario=request.POST["id_formulario"]
         mi_motivo_consulta = request.POST['motivo_consulta']
         mi_fc_id_ficha = request.POST['fc_id_ficha']
         mi_sintoma = request.POST['sintoma']
-        mi_prioridad = request.POST['priorida']
+        mi_prioridad = request.POST['prioridad']
+        mi_hora = request.POST['hora_solicitud']
        
         if mi_id_formulario != "":
             try:
+                
                 Consulta = FormularioConsulta()
-
-                Consulta.id_formulario = mi_id_formulario
+                Consulta.id_formulario=mi_id_formulario
                 Consulta.motivo_consulta = mi_motivo_consulta
                 Consulta.fc_id_ficha = mi_fc_id_ficha
                 Consulta.sintoma = mi_sintoma
                 Consulta.prioridad = mi_prioridad
-               
-
+                Consulta.hora_solicitud=mi_hora
                 Consulta.save()
-
-                return render(request, '', {})
-
+                return render(request, 'solicitado.html', {})
             except Consulta.DoesNotExist:
                 return render(request, 'core/error/error_204.html', {})
         else:
