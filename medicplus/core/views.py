@@ -4,8 +4,7 @@ from django.db import IntegrityError
 from .models import FormularioConsulta
 def index(request):
     return render(request,'index.html',{})
-def solicitado(request):
-    return render(request,'solicitado.html',{})
+
     
 def QuienesSomos(request):
     return render(request,'Quienessomos.html',{})
@@ -84,3 +83,11 @@ def listado(request):
     lista = FormularioConsulta.objects.all()
     context={'listado':lista}
     return render(request,'listado.html',context)
+
+    
+def solicitado(request):
+    print("estamos al aire tulio lista de espera")
+    #lista = Alumno.objects.all()
+    lista = FormularioConsulta.objects.all()
+    context={'listado':lista}
+    return render(request,'solicitado.html',context)

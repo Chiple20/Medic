@@ -3,8 +3,53 @@
 {% load static %}
 {% block content%}
 <br>
+<div class="row">
+    <div class="col s12">
+      <div class=" section container">
+          <div class="row card-panel #90caf9 blue lighten-3">
+            <div class="col s3">
+
+            </div>
+            <div class="col s6 center">
+                <h2>solicitud resivida</h2>
+                <h2>Usted esta en el puesto {{ listado | length }} en la lista de espera..</h2>
+            </div>
+            
+            </div>                 
+            <div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer class="page-footer #64b5f6 blue lighten-2">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">En asociacion con:</h5>
+          <img src="{% static 'img/redsalud.png' %}" alt="Error" width="200">
+          
+        </div>
+        <div class="col l2 offset-l2 s12">
+          <h5 class="white-text">Contactanos</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" >soporte@medicplus.cl</a></li>
+            <li><a class="grey-text text-lighten-3" >Facebook</a></li>
+         
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Copyright Text
       
-      <h1>solicitud resivida</h1>
+      </div>
+    </div>
+  </footer>
+      
+     
 
   {% endblock %}
 

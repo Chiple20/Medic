@@ -17,7 +17,7 @@
 
     <nav>
         <div class="nav-wrapper #1e88e5 blue darken-1">
-            <a href="#!" class="brand-logo right"><img src="{% static 'img/logo.png' %}" alt="Error" width="60"></a>
+            <a href="index" class="brand-logo right"><img src="{% static 'img/logo.png' %}" alt="Error" width="60"></a>
       
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             
@@ -38,6 +38,9 @@
         <li><a href="#">Ficha Medica</a></li>
         <li><a href="#">Perfil</a></li>
         <li><a href="Formulario">Solicitud de consulta</a></li>
+        {% if user.username|slice:"5" == "admin"%}
+        <li><a href="listado">listado de consulta</a></li>
+        {% endif %}  
         <li><a href="#">Talleres</a></li>
         {% if not user.is_authenticated%}
         <li sytle="style=display:none;"><a href="registro">Registrarse</a></li>

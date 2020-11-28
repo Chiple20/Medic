@@ -40,3 +40,10 @@ h3{
     height: auto;
     float: left; 
   }
+h5{
+    margin-left: 3%;
+    font-size: 170%;
+}
+.posicion{
+    margin-left: 10%;
+}

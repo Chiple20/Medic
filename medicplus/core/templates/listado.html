@@ -3,9 +3,78 @@
 {% load static %}
 {% block content%}
 
-       <h1 class="center">lista de pacientes en espera</h1> 
+       <h1 class="center linia">lista de pacientes en espera</h1> 
        <br><br>
-       las cantidad de pacientes es {{ listado | length }}
+       <h5  class="tamaño center">
+              las cantidad de pacientes es {{ listado | length }}
+       </h5>
+<br><br><br>
+       <table class="centered responsive-table">
+              <thead>
+                <tr>
+                    <th>ID FORMULARIO</th>
+                    <th>MOTIVO CONSULTA</th>
+                    <th>ID FICHA</th>
+                    <th>SINTOMAS</th>
+                    <th>PRIORIDAD</th>
+                    <th>HORA SOLICITUD</th>
+                    <th></th>
+                </tr>
+              </thead>
+      
+              <tbody>
+                     {% for consulta in listado %}
+                <tr>
+                  <td>{{consulta.id_formulario}}</td>
+                  <td>{{consulta.motivo_consulta}}</td>
+                  <td>{{consulta.fc_id_ficha}}</td>
+                  <td>{{consulta.sintoma}}</td>
+                  <td>{{consulta.prioridad}}</td>
+                  <td>{{consulta.hora_solicitud}}</td>
+                  <td>Atender</td>
+                </tr>
+                
+                {% endfor %}
+              </tbody>
+            </table>
+            
+
+       <br> <br> <br>
+      <footer class="page-footer #64b5f6 blue lighten-2">
+       <div class="container">
+         <div class="row">
+           <div class="col l6 s12">
+             <h5 class="white-text">En asociacion con:</h5>
+             <img src="{% static 'img/redsalud.png' %}" alt="Error" width="200">
+             
+           </div>
+           <div class="col l2 offset-l2 s12">
+             <h5 class="white-text">Contactanos</h5>
+             <ul>
+               <li><a class="grey-text text-lighten-3" >soporte@medicplus.cl</a></li>
+               <li><a class="grey-text text-lighten-3" >Facebook</a></li>
+            
+             </ul>
+           </div>
+         </div>
+       </div>
+       <div class="footer-copyright">
+         <div class="container">
+         © 2020 Copyright Text
+         
+         </div>
+       </div>
+     </footer>
+
+
+
+
+
+
+
+
+
+
        <br>
        <div class="xbox">       
               <div class="row">
@@ -17,10 +86,11 @@
                      <div class="col s1">HORA SOLICITUD</div>
               </div>
 
-              {% for consulta in listado %}
+              
 
 
                      <div class="row">
+                            {% for consulta in listado %}
                             <div class="col s1">{{consulta.id_formulario}}</div>
                             <div class="col s3">{{consulta.motivo_consulta}}</div>
                             <div class="col s1">{{consulta.fc_id_ficha}}</div>
@@ -28,11 +98,12 @@
                             <div class="col s2">{{consulta.prioridad}}</div>
                             <div class="col s1">{{consulta.hora_solicitud}}</div>
                             <div class="col s1"><input type="button" value="Atender"></div>
+                            {% endfor %}
                      </div>
 
 
        
-              {% endfor %}
+            
 
 
 
@@ -40,7 +111,7 @@
        </div>
 
 
-  
+      
 
   {% endblock %}
 
